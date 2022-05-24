@@ -1,0 +1,34 @@
+# MLlib : Machine Learning Library
+
+- ML을 쉽고 확장성 있게 적용하기 위해
+- 머신러닝 파이프라인 개발을 쉽게 하기 위해
+- MLlib은 DataFrame 위에서 동작한다
+    - 아직 RDD API가 있지만 “maintenance mode”
+    - DataFrame을 쓰는 MLlib API를 Spark ML 이라고도 부름
+- 여러 컴포넌트
+    - 알고리즘
+        - Classification,Regression,Clustering,Recommendation
+    - 파이프라인
+        - Training,Evaluating,Tuning,Persistence
+    - Feature Engineering
+        - Extraction,Transformation
+    - Utils
+        - Linear algebra, Statistics
+    - 머신러닝 파이프라인 구성
+        - 데이터 로딩 → 전처리 → 학습 → 모델 평가
+- 주요 컴포넌트
+    - DataFrame
+    - Transformer : 피쳐 변환과 학습된 모델을 추상화 - transform()
+        - 데이터를 학습이 가능한 포맷으로 바꾼다
+        - DF를 받아 새로운 DF를 만드는데, 보통 하나 이상의 column을 더하게 된다.
+    - Estimator : 모델의 학습 과정을 추상화 - fit()
+        - fit()은 DataFrame을 받아 Model을 반환
+        - 모델은 하나의 Transformer
+    - Evaluator : metric을 기반으로 모델의 성능을 평가
+        - 모델을 여러개 만들어서, 성능을 평가 후 가장 좋은 모델을 뽑는 방식으로 모델 튜닝을 자동화 할 수 있다.
+    - Pipeline : ML의 워크 플로우
+        - 여러 stage를 담고 있다.
+        - 저장될 수 있다.(persist)
+    - Parameter
+    
+- 추천 알고리즘 - 사용할 알고리즘 → ALS : Alternating Least Squares
