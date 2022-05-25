@@ -33,7 +33,7 @@
         - Airflow의 구조
             - One Node Architecture
                 
-                ![Untitled](ImageUntitled.png)
+                ![Untitled](Image/Untitled.png)
                 
                 - Metastore가 DAG에 대한 정보를 담고 있어 Web Server와 Scheduler가 해당 정보를 읽어오고 Executor로 정보를 보내서 실행시킴
                 - 실행된 Task Instance는 Metastore로 보내져서 상태를 업데이트함
@@ -41,7 +41,7 @@
                 - **Executor 안에 Queue가 존재 - Task의 순서를 정함**
             - Multi-Node Architecture
                 
-                ![Untitled](ImageUntitled%201.png)
+                ![Untitled](Image/Untitled%201.png)
                 
                 - **Executor 바깥에 Queue가 존재**
                     - Queue 역할 - Celery Broker
@@ -54,7 +54,7 @@
     - SparkOperator - airflow에서 spark-submit만 해주고 모니터링만 함 (heavy한 작업은 spark에게 넘김)
         - Connection 추가 - local 환경/standalone
             
-            ![Untitled](ImageUntitled%202.png)
+            ![Untitled](Image/Untitled%202.png)
             
             ```python
             #pip3 install apache-airflow-providers-apache-spark
